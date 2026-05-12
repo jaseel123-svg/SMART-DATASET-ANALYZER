@@ -298,9 +298,14 @@ if file:
 
     # numerical columns
         else:
+    # safe default value for numeric columns
+            default_value=0.0
+            if pd.api.types.is_numeric_dtype(df[col]):
+                default_value=float(df[col].mean())
+
             input_data[col]=st.number_input(
-                f"Enter {col}",
-                value=float(df[col].mean())
+            f"Enter {col}",
+            value=default_value
             )
 
     input_df=pd.DataFrame([input_data])
