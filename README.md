@@ -91,4 +91,4 @@ streamlit run app.py
 
 # Author
 
-Jaseel
+Jaseel Sha Baig
