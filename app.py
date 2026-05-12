@@ -64,10 +64,10 @@ if file:
             )
         
         #numerical columns
-        else:
+        elif pd.api.types.is_numeric_dtype(df[col]):
             df[col]=df[col].fillna(
                 df[col].mean()
-            )
+        )
     
     ## download csv
     st.subheader("Download Cleaned Dataset")
